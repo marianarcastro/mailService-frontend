@@ -1,0 +1,29 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="sidenav">
+    <div class="login-main-text">
+        <h2>Mail Service Application<br></h2>
+        <p>Login or register from here to access.</p>
+    </div>
+</div>
+<div class="form">
+    <div class="col-sm-12">
+        <div class="login-form">
+            <form>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input [(ngModel)]="creds.email" type="text" name="email" class="form-control" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input [(ngModel)]="creds.senha" name="senha" type="password" class="form-control" placeholder="Enter your password">
+                </div>
+                <button type="submit" class="btn btn-black" (click)="login()">Login</button>
+                <button type="submit" class="btn btn-secondary" [routerLink]="['/register']">Register</button>
+            </form>
+        </div>
+    </div>
+</div>

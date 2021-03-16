@@ -1,0 +1,35 @@
+<div class="card border border-dark bg-dark text-white" style="width: 800px;">
+    <div class="card-header">
+        <strong><i class="fa fa-list"></i>Cadastro de Usuário</strong>
+    </div>
+    <div class="card-body table-responsive">
+        <form>
+            <div class="form-group" >
+              <label for="exampleFormControlInput1">Nome</label>
+              <input *ngIf="user == null" type="text" [(ngModel)]="userModel.nome" name="nome" class="form-control" id="exampleFormControlInput1" placeholder="Insira seu nome">
+              <label *ngIf="user != null"class="form-control">{{user.nome}}</label> 
+            </div>
+
+            <div class="form-group">
+              <label for="exampleFormControlInput2">Login</label>
+              <input *ngIf="user == null" type="text" [(ngModel)]="userModel.login" name="login" class="form-control" id="exampleFormControlInput2" placeholder="Insira um nome de login">
+              <label *ngIf="user != null"class="form-control">{{user.login}}</label>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput3">Email</label>
+              <input *ngIf="user == null" type="email" [(ngModel)]="userModel.email" name="email" class="form-control" id="exampleFormControlInput3" placeholder="Insira seu email">
+              <label *ngIf="user != null"class="form-control">{{user.email}}</label>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput4">Senha</label>
+              <input type="password" [(ngModel)]="userModel.senha" name="senha" class="form-control" id="exampleFormControlInput4" placeholder="Insira uma senha">
+            </div>
+            <div class="form-group">
+                <button *ngIf="user == null" type="submit" class="btn btn-success" (click)="save()">Cadastrar</button>
+                <button *ngIf="user != null" type="submit" class="btn btn-success" (click)="alterar()">Alterar</button>
+                <button type="submit" class="btn btn-outline-info" style="margin: 10px;" [routerLink]="['/home']">Voltar</button>
+            </div>
+        </form>
+    </div>
+
+</div>

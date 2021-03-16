@@ -1,0 +1,36 @@
+<div class="card border border-dark bg-dark text-white" style="width: 1000px;">
+    <div class="card-header">
+        <strong><i class="fa fa-list"></i>Usuários Cadastrados</strong>
+    </div>
+    <div class="card-body table-responsive">
+        <div id="table-desktop">
+            <table class="table table-bordered table-condensed table-hover table-striped table-dark">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Login</th>
+                        <th>Email</th>
+                        <th>Administrador</th>
+                        <th>Created Date</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <ng-container>
+                        <tr *ngFor="let user of users;">
+                            <td>{{user.id}}</td>
+                            <td>{{user.nome}}</td>
+                            <td>{{user.login}}</td>
+                            <td>{{user.email}}</td>
+                            <td>{{user.admin}}</td>
+                            <td>{{user.createdDate}}</td>
+                            <td><a [routerLink]="['/users', user.id]"><i class="material-icons"> mode_edit </i></a></td>
+                        </tr>
+                    </ng-container>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
